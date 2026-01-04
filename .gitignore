@@ -1,0 +1,139 @@
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# General
+# =========================
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+*.pid
+*.pid.lock
+*.lock
+*.cache
+
+# =========================
+# Secrets / Env
+# =========================
+.env
+.env.*
+!.env.example
+*.local
+*.pfx
+*.pem
+*.key
+*.crt
+*.cer
+
+# =========================
+# Node.js (common)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# Next.js
+# =========================
+.next/
+out/
+.vercel/
+.next.cache/
+
+# =========================
+# Expo / React Native
+# =========================
+.expo/
+.expo-shared/
+*.jks
+*.keystore
+ios/Pods/
+ios/build/
+android/.gradle/
+android/local.properties
+android/app/build/
+android/build/
+# RN packager
+.metro-health-check*
+
+# =========================
+# .NET / Visual Studio
+# =========================
+bin/
+obj/
+[Ll]og/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider / ReSharper
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Visual Studio folders
+.vs/
+
+# =========================
+# Build / Coverage / Test
+# =========================
+TestResults/
+coverage/
+coverage.*
+*.trx
+
+# =========================
+# Docker
+# =========================
+**/*docker-compose.override.yml
+**/.docker/
+**/docker-data/
+# (Nếu bạn mount volume ra thư mục local)
+**/data/
+**/volumes/
+
+# =========================
+# Terraform / IaC (if any)
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# =========================
+# Logs / runtime
+# =========================
+logs/
+**/logs/
+**/*.log
+
+# =========================
+# Temporary workspace
+# =========================
+tmp/
+temp/
