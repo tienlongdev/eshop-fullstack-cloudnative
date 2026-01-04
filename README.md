@@ -1,14 +1,20 @@
-# eShop — Fullstack Cloud-Native Microservices Showcase (Monorepo)
+# eShop — E-commerce Platform (Cellphones-style) | Polyglot Microservices 2026 (Monorepo)
 
----
+Mục tiêu: xây dựng hệ thống TMĐT kiểu **cellphones.com.vn** (catalog lớn, biến thể sản phẩm, flash-sale, tồn kho theo kho/chi nhánh, checkout + thanh toán, theo dõi đơn, CMS home sections, search) theo kiến trúc **Cloud-Native Microservices 2026**.
 
-## Tech Stack
+Repo này là **showcase “Backend Software Engineer”**: polyglot runtime, event-driven Kafka, database-per-service, gateway, observability, CI/CD, K8s, Cloud.
+
+----
+
+## 1) Tech Stack
 
 ### Backend Platform
-- **Services:** .NET 10 + NestJS
-- **Messaging:** Kafka
-- **Databases:** PostgreSQL + MongoDB + Redis
+- **Services:** .NET 10 + NestJS (polyglot microservices)
+- **Messaging:** Kafka (event-driven)
+- **Databases:** PostgreSQL + MongoDB + Redis (polyglot persistence)
 - **Gateway:** YARP (.NET)
+- **Observability (roadmap):** OpenTelemetry + Grafana + Tempo/Jaeger
+- **Deploy (roadmap):** Docker + Kubernetes + GitHub Actions + Cloud (AKS/EKS)
 
 ### Frontend / Mobile
 - **Web:** Next.js (TypeScript)
@@ -16,58 +22,64 @@
 
 ---
 
-## Folder Structure
+## 2) Folder Structure
 
 ```txt
 eShop/
   src/
     backend/
       services/
-        ordering/OrderingService/      # .NET 10
-        catalog/CatalogService/        # NestJS
+        auth/AuthService/                  # Auth/OIDC (phase 2: Keycloak / custom)
+        catalog/CatalogService/            # Product, Category, Brand, Variant (Mongo)
+        pricing/PricingService/            # Price, promo, voucher (Postgres)
+        inventory/InventoryService/        # Stock, reservation (Redis + Postgres)
+        cart/CartService/                  # Cart (Redis)
+        ordering/OrderingService/          # Checkout, order lifecycle (Postgres)
+        payment/PaymentService/            # Payment intent + webhook (Postgres)
+        notification/NotificationWorker/   # consume Kafka: email/sms/push
+        cms/CmsService/                    # home sections, banners, landing pages
+        search/SearchService/              # search (phase 3: OpenSearch/Elastic)
+        ai/AiAssistantService/             # recommendation/semantic search (phase 4)
       gateways/
-        api-gateway/ApiGateway/        # YARP
-      deploy/
-        compose/docker-compose.yml     # postgres + mongo + redis + kafka + kafka-ui
+        api-gateway/ApiGateway/            # YARP gateway
+      libs/
+        contracts/                         # event schemas, OpenAPI/AsyncAPI
     frontend/
-      web/                             # Next.js
+      web/                                 # Next.js
     mobile-app/
-      eShopMobile/                     # Expo React Native
+      eShopMobile/                         # Expo RN
+  docker-compose.yml                        # run infra + services (planned)
   README.md
 ```
 
-
 ## Run Backend (APIs)
 
-> Start theo thứ tự: **Infra → Services → Gateway**  
+> Dev mode: chạy theo thứ tự **Infra → Services → Gateway**   
 > Mỗi service nên chạy ở **một terminal riêng**.
 
 ```txt
-# 0) Go to repo root
-cd C:\dev\eShop
-
-# 1) Start local infrastructure (Postgres + Mongo + Redis + Kafka)
-cd src\backend\deploy\compose
+# Terminal 0 — Start Infra (Postgres + Mongo + Redis + Kafka)
+cd C:\dev\eShop\src\backend\deploy\compose
 docker compose up -d
 
 # Kafka UI: http://localhost:8080
 
-# 2) Start OrderingService (.NET 10)
+# Start OrderingService (.NET 10)
 cd C:\dev\eShop\src\backend
 dotnet run --project services\ordering\OrderingService --urls http://localhost:5002
 
-# 3) Start CatalogService (NestJS)
+
+# Start CatalogService (NestJS)
 cd C:\dev\eShop\src\backend\services\catalog\CatalogService
 npm.cmd install
 npm.cmd run start:dev
 # Default: http://localhost:3000
 
-# 4) Start API Gateway (YARP)
+# Start API Gateway (YARP)
 cd C:\dev\eShop\src\backend
 dotnet run --project gateways\api-gateway\ApiGateway --urls http://localhost:5000
 
-
-# Stop local infrastructure (when done)
+# Stop Infra (khi chạy xong)
 cd C:\dev\eShop\src\backend\deploy\compose
 docker compose down
 
