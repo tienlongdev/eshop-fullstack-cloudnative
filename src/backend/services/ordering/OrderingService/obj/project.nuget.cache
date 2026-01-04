@@ -1,11 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "5MsrIpTtbJU=",
+  "dgSpecHash": "eqv+IAegRe4=",
   "success": true,
-  "projectFilePath": "C:\\RimdaSilva x Deep Work\\eShop\\src\\backend\\services\\ordering\\OrderingService\\OrderingService.csproj",
+  "projectFilePath": "C:\\dev\\eShop\\src\\backend\\services\\ordering\\OrderingService\\OrderingService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\confluent.kafka\\2.12.0\\confluent.kafka.2.12.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\librdkafka.redist\\2.12.0\\librdkafka.redist.2.12.0.nupkg.sha512",
     "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
-    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.1\\microsoft.entityframeworkcore.10.0.1.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.1\\microsoft.entityframeworkcore.abstractions.10.0.1.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.1\\microsoft.entityframeworkcore.analyzers.10.0.1.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.0\\microsoft.entityframeworkcore.relational.10.0.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\npgsql\\10.0.0\\npgsql.10.0.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.0\\npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry\\1.14.0\\opentelemetry.1.14.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry.api\\1.14.0\\opentelemetry.api.1.14.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.14.0\\opentelemetry.api.providerbuilderextensions.1.14.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry.exporter.opentelemetryprotocol\\1.14.0\\opentelemetry.exporter.opentelemetryprotocol.1.14.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry.extensions.hosting\\1.14.0\\opentelemetry.extensions.hosting.1.14.0.nupkg.sha512",
+    "C:\\Users\\LongPhanTien\\.nuget\\packages\\opentelemetry.instrumentation.aspnetcore\\1.14.0\\opentelemetry.instrumentation.aspnetcore.1.14.0.nupkg.sha512"
   ],
   "logs": []
 }
