@@ -2,7 +2,7 @@
 
 Mục tiêu: xây dựng hệ thống TMĐT kiểu **cellphones.com.vn** (catalog lớn, biến thể sản phẩm, flash-sale, tồn kho theo kho/chi nhánh, checkout + thanh toán, theo dõi đơn, CMS home sections, search) theo kiến trúc **Cloud-Native Microservices 2026**.
 
-Repo này là **showcase “Backend Software Engineer”**: polyglot runtime, event-driven Kafka, database-per-service, gateway, observability, CI/CD, K8s, Cloud.
+Showcase: polyglot runtime, event-driven Kafka, database-per-service, gateway, observability, CI/CD, K8s, Cloud.
 
 ----
 
